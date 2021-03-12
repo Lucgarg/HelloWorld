@@ -41,14 +41,14 @@ public class EmpresaServlet extends HttpServlet {
 		categoriaService = new CategoriaServiceImpl();
 		tiendaService = new TiendaServiceImpl();
 		empresaService = new EmpresaServiceImpl();
-
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter(ActionNames.ACTION);
 		if(ActionNames.LOG_IN.equalsIgnoreCase(action)) {
 			String usuario = request.getParameter(ParameterNames.NOMBRE_USUARIO);
-		
+			if(usuario !=null) {}
 			String email = usuario.matches("^(.+)@(.+)$")? usuario: null;
 			usuario = email == null? usuario: null;
 			
